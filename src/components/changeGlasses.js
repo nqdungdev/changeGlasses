@@ -11,82 +11,75 @@ import v7 from "../assets/img/v7.png";
 import v8 from "../assets/img/v8.png";
 import v9 from "../assets/img/v9.png";
 
+const data = [
+  {
+    id: 1,
+    price: 30,
+    name: "GUCCI G8850U",
+    url: v1,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 2,
+    price: 50,
+    name: "GUCCI G8759H",
+    url: v2,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 3,
+    price: 30,
+    name: "DIOR D6700HQ",
+    url: v3,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 4,
+    price: 70,
+    name: "DIOR D6005U",
+    url: v4,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 5,
+    price: 40,
+    name: "PRADA P8750",
+    url: v5,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 6,
+    price: 60,
+    name: "PRADA P9700",
+    url: v6,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 7,
+    price: 80,
+    name: "FENDI F8750",
+    url: v7,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 8,
+    price: 100,
+    name: "FENDI F8500",
+    url: v8,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+  {
+    id: 9,
+    price: 60,
+    name: "FENDI F4300",
+    url: v9,
+    desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
+  },
+];
 export default class ChangeGlasses extends Component {
-  data = [
-    {
-      id: 1,
-      price: 30,
-      name: "GUCCI G8850U",
-      url: v1,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 2,
-      price: 50,
-      name: "GUCCI G8759H",
-      url: v2,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 3,
-      price: 30,
-      name: "DIOR D6700HQ",
-      url: v3,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 4,
-      price: 70,
-      name: "DIOR D6005U",
-      url: v4,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 5,
-      price: 40,
-      name: "PRADA P8750",
-      url: v5,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 6,
-      price: 60,
-      name: "PRADA P9700",
-      url: v6,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 7,
-      price: 80,
-      name: "FENDI F8750",
-      url: v7,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 8,
-      price: 100,
-      name: "FENDI F8500",
-      url: v8,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-    {
-      id: 9,
-      price: 60,
-      name: "FENDI F4300",
-      url: v9,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
-  ];
-
   state = {
     prev: {},
-    current: {
-      id: 1,
-      price: 30,
-      name: "GUCCI G8850U",
-      url: v1,
-      desc: "Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ",
-    },
+    current: { ...data[0] },
   };
 
   selectGlasses = (item) => {
@@ -132,7 +125,7 @@ export default class ChangeGlasses extends Component {
             </div>
 
             <div className={styles.glasses__items}>
-              {this.data.map((item) => {
+              {data.map((item) => {
                 return (
                   <div
                     key={item.id}
